@@ -1,0 +1,12 @@
+.venv/
+**/node_modules/
+**/.angular/
+**/www/
+**/android/.gradle/
+**/android/app/build/
+**/android/build/
+**/android/capacitor-cordova-android-plugins/build/
+**/.idea/
+**/*.iml
+.DS_Store
+conversor-de-divisas/android/local.properties

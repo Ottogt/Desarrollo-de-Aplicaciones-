@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">DivisApp 08001620</string>
+    <string name="title_activity_main">DivisApp 08001620</string>
+    <string name="package_name">gt.edu.galileo.divisapp08001620</string>
+    <string name="custom_url_scheme">gt.edu.galileo.divisapp08001620</string>
+</resources>

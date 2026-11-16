@@ -1,0 +1,74 @@
+.page-bg {
+  --background: linear-gradient(165deg, #e8f3ef 0%, #f7faf8 45%, #dfece7 100%);
+}
+
+.wrap {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 20px 16px 32px;
+}
+
+.hero-card {
+  margin: 0;
+  border-radius: 18px;
+  box-shadow: 0 10px 28px rgba(16, 56, 42, 0.12);
+}
+
+.rate {
+  margin: 0 0 16px;
+  color: #4a5c55;
+  font-size: 0.95rem;
+}
+
+.field {
+  --background: #f3f8f6;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.actions {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.result {
+  margin-top: 18px;
+  padding: 16px;
+  border-radius: 14px;
+  background: #10382a;
+  color: #fff;
+  text-align: center;
+}
+
+.result ion-note {
+  color: #b7d2c6 !important;
+  font-size: 0.85rem;
+}
+
+.amount {
+  margin: 6px 0 4px;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.amount span {
+  font-size: 1rem;
+  font-weight: 500;
+  opacity: 0.85;
+  margin-left: 4px;
+}
+
+.detail {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.85;
+}
+
+.footer-note {
+  text-align: center;
+  margin-top: 18px;
+  color: #6a7a73;
+  font-size: 0.8rem;
+}
