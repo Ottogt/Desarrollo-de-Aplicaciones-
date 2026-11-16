@@ -22,8 +22,22 @@
 
 .field {
   --background: #f3f8f6;
+  --color: #10382a;
   border-radius: 12px;
   margin-bottom: 16px;
+}
+
+.field ion-input {
+  --color: #10382a;
+  --placeholder-color: #6a7a73;
+  --placeholder-opacity: 0.85;
+  color: #10382a;
+}
+
+.field ion-input::part(native),
+.field ion-input input {
+  color: #10382a !important;
+  caret-color: #10382a;
 }
 
 .actions {

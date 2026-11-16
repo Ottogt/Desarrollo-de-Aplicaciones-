@@ -5,6 +5,14 @@
 **Curso:** Aplicaciones Móviles  
 **Framework:** Ionic + Angular + Capacitor
 
+## Enlaces GitHub
+
+| Recurso | URL |
+|---|---|
+| Carpeta Actividad 3 | https://github.com/Ottogt/Desarrollo-de-Aplicaciones-/tree/main/Actividad%203 |
+| Descargar APK | https://github.com/Ottogt/Desarrollo-de-Aplicaciones-/raw/main/Actividad%203/entregables/DivisApp_08001620.apk |
+| Repositorio | https://github.com/Ottogt/Desarrollo-de-Aplicaciones- |
+
 ## Entregables
 
 | Entregable | Ubicación |
@@ -33,7 +41,3 @@ npx @ionic/cli serve
 ```bash
 ./.venv/bin/python scripts/generate_evidencia_pdf.py
 ```
-
-## Repositorio
-
-https://github.com/Ottogt/Desarrollo-de-Aplicaciones-

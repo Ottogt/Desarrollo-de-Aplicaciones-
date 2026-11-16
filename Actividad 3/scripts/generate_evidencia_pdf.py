@@ -29,7 +29,13 @@ MARGIN = 0.85 * inch
 PRIMARY = (0.15, 0.35, 0.72)
 DARK = (0.10, 0.14, 0.22)
 MUTED = (0.40, 0.45, 0.52)
+
 REPO = "https://github.com/Ottogt/Desarrollo-de-Aplicaciones-"
+REPO_ACTIVIDAD3 = "https://github.com/Ottogt/Desarrollo-de-Aplicaciones-/tree/main/Actividad%203"
+APK_DOWNLOAD = (
+    "https://github.com/Ottogt/Desarrollo-de-Aplicaciones-/raw/main/"
+    "Actividad%203/entregables/DivisApp_08001620.apk"
+)
 APK_PATH = "entregables/DivisApp_08001620.apk"
 
 
@@ -91,8 +97,8 @@ def cover(c: canvas.Canvas) -> None:
     items = [
         "1. Carátula con datos del estudiante",
         "2. Pantallazo de la app con carné en quetzales y equivalente en dólares",
-        "3. URL del repositorio público de GitHub",
-        "4. Referencia al APK generado del proyecto",
+        "3. URL del repositorio público (carpeta Actividad 3)",
+        "4. Link de GitHub para descargar el APK",
     ]
     y = 2.35 * inch
     for item in items:
@@ -153,53 +159,69 @@ def repo_and_apk_page(c: canvas.Canvas) -> None:
     c.rect(0, H - 0.9 * inch, W, 0.9 * inch, fill=1, stroke=0)
     c.setFillColorRGB(1, 1, 1)
     c.setFont(FONT_B, 14)
-    c.drawString(MARGIN, H - 0.55 * inch, "Repositorio GitHub y APK")
+    c.drawString(MARGIN, H - 0.55 * inch, "Repositorio GitHub y descarga del APK")
 
+    # 1. Repo Actividad 3
     c.setFillColorRGB(*DARK)
     c.setFont(FONT_B, 13)
-    c.drawString(MARGIN, H - 1.5 * inch, "1. URL del repositorio público")
+    c.drawString(MARGIN, H - 1.45 * inch, "1. Repositorio público (carpeta Actividad 3)")
     c.setFont(FONT, 10)
     c.setFillColorRGB(*MUTED)
-    c.drawString(MARGIN, H - 1.85 * inch, "Código fuente de la aplicación Ionic:")
+    c.drawString(MARGIN, H - 1.75 * inch, "Código fuente, PDF, pantallazo y APK:")
     c.setFillColorRGB(*PRIMARY)
-    c.setFont(FONT_B, 11)
-    c.drawString(MARGIN, H - 2.2 * inch, REPO)
+    c.setFont(FONT_B, 9)
+    c.drawString(MARGIN, H - 2.05 * inch, REPO_ACTIVIDAD3)
+    c.linkURL(REPO_ACTIVIDAD3, (MARGIN, H - 2.15 * inch, W - MARGIN, H - 1.9 * inch), relative=0)
 
+    c.setFillColorRGB(*MUTED)
+    c.setFont(FONT, 9)
+    c.drawString(MARGIN, H - 2.35 * inch, f"Repositorio raíz: {REPO}")
+    c.linkURL(REPO, (MARGIN, H - 2.45 * inch, W - MARGIN, H - 2.25 * inch), relative=0)
+
+    # Caja rutas
     c.setFillColorRGB(0.94, 0.96, 0.99)
-    c.roundRect(MARGIN, H - 4.5 * inch, W - 2 * MARGIN, 1.9 * inch, 10, fill=1, stroke=0)
+    c.roundRect(MARGIN, H - 4.0 * inch, W - 2 * MARGIN, 1.4 * inch, 10, fill=1, stroke=0)
     c.setFillColorRGB(*DARK)
-    c.setFont(FONT_B, 12)
-    c.drawString(MARGIN + 16, H - 2.85 * inch, "Ubicación en el repositorio")
-    c.setFont(FONT, 10)
+    c.setFont(FONT_B, 11)
+    c.drawString(MARGIN + 16, H - 2.8 * inch, "Ubicación dentro de Actividad 3")
+    c.setFont(FONT, 9)
     c.setFillColorRGB(*MUTED)
     repo_lines = [
-        "Carpeta: Actividad 3/",
-        "Proyecto Ionic: Actividad 3/conversor-de-divisas/",
-        "APK: Actividad 3/entregables/DivisApp_08001620.apk",
-        "PDF: Actividad 3/docs/Evidencia_Actividad3_DivisApp_OttoHernandez_08001620.pdf",
+        "Proyecto Ionic: conversor-de-divisas/",
+        "APK: entregables/DivisApp_08001620.apk",
+        "PDF: docs/Evidencia_Actividad3_DivisApp_OttoHernandez_08001620.pdf",
+        "Pantallazo: assets/pantallazo_DivisApp_08001620.png",
     ]
-    y = H - 3.2 * inch
+    y = H - 3.1 * inch
     for line in repo_lines:
         c.drawString(MARGIN + 16, y, line)
-        y -= 0.28 * inch
+        y -= 0.24 * inch
 
+    # 2. APK download link
     c.setFillColorRGB(*DARK)
     c.setFont(FONT_B, 13)
-    c.drawString(MARGIN, H - 5.0 * inch, "2. APK generado del proyecto")
+    c.drawString(MARGIN, H - 4.4 * inch, "2. Link de GitHub para descargar el APK")
     c.setFont(FONT, 10)
     c.setFillColorRGB(*MUTED)
+    c.drawString(MARGIN, H - 4.7 * inch, "Descarga directa del APK desde GitHub (clic o pegar en el navegador):")
+
+    c.setFillColorRGB(0.12, 0.45, 0.28)
+    c.roundRect(MARGIN, H - 5.85 * inch, W - 2 * MARGIN, 0.95 * inch, 10, fill=1, stroke=0)
+    c.setFillColorRGB(1, 1, 1)
+    c.setFont(FONT_B, 11)
+    c.drawString(MARGIN + 16, H - 5.15 * inch, "Descargar APK · DivisApp_08001620.apk")
+    c.setFont(FONT, 8)
+    c.drawString(MARGIN + 16, H - 5.45 * inch, APK_DOWNLOAD)
+    c.linkURL(APK_DOWNLOAD, (MARGIN, H - 5.85 * inch, W - MARGIN, H - 4.9 * inch), relative=0)
+
+    c.setFillColorRGB(*MUTED)
+    c.setFont(FONT, 10)
     apk_lines = [
-        "Se generó el APK de depuración con Capacitor + Gradle:",
-        f"  Archivo adjunto / entregable: {APK_PATH}",
-        "  Nombre: DivisApp_08001620.apk",
-        "  Plataforma: Android (debug)",
-        "  App ID: gt.edu.galileo.divisapp08001620",
-        "  Título de la app: DivisApp 08001620",
-        "",
-        "El APK se incluye junto a este PDF en la carpeta Actividad 3",
-        "del repositorio (apartado de entregables de la tarea).",
+        f"Archivo local: {APK_PATH}",
+        "Plataforma: Android (debug) · App ID: gt.edu.galileo.divisapp08001620",
+        "Título de la app: DivisApp 08001620 · Tasa: 8 GTQ = 1 USD",
     ]
-    y = H - 5.4 * inch
+    y = H - 6.2 * inch
     for line in apk_lines:
         c.drawString(MARGIN, y, line)
         y -= 0.28 * inch
